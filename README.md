@@ -1,4 +1,4 @@
-# Agenda MVC Swing (vallegrande.edu.pe)
+# Agenda Swing (vallegrande.edu.pe)
 
 Proyecto básico con estructura MVC y GUI Swing para gestión dinámica de agenda.
 
