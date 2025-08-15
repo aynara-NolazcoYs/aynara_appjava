@@ -10,5 +10,30 @@ import java.util.Optional;
  * Controlador que maneja la lógica entre la vista y el modelo.
  */
 public class ContactController {
+    private final ContactRepository repo;
 
+    public ContactController(ContactRepository repo) {
+        this.repo = repo;
+    }
+
+    // Crear un nuevo contacto y guardarlo
+    public Contact create(String id, String name, String email, String phone) {
+        Contact c = new Contact(id, name, email, phone);
+        return repo.save(c);
+    }
+
+    // Buscar contacto por ID
+    public Optional<Contact> get(String id) {
+        return repo.findById(id);
+    }
+
+    // Listar todos los contactos
+    public List<Contact> list() {
+        return repo.findAll();
+    }
+
+    // Eliminar contacto por ID
+    public boolean delete(String id) {
+        return repo.deleteById(id);
+    }
 }
